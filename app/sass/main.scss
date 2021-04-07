@@ -1,0 +1,56 @@
+@import "./_work/mixins.scss";
+@import "./_work/nullstyle.scss";
+@import "./_work/vars.scss";
+@import "./_work/fonts.scss";
+@import "../../node_modules/bootstrap/dist/css/bootstrap-grid.min.css";
+html {
+  height: 100%;
+  overflow: auto;
+}
+body {
+  height: 100%;
+  font-family: $main-font, $family;
+  color: $base-color;
+  font-weight: $base-font-weight;
+  font-size: $base-font-size;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+// блок прижатия футера
+header.header {
+  flex: 0 0 auto;
+}
+main.main {
+  flex: 1 1 auto;
+}
+footer.footer {
+  flex: 0 0 auto;
+}
+._container {
+  max-width: $maxWidthContainer + px;
+  margin: 0px auto;
+  @media (max-width: $md1+px) {
+    max-width: 970px;
+  }
+  @media (max-width: $md2+px) {
+    max-width: 750px;
+  }
+  @media (max-width: $md3+px) {
+    max-width: none;
+    padding: 0 10px;
+  }
+}
+@import "custom";
+@import "./blocks/header.scss";
+@import "./blocks/main-screen.scss";
+@import "./blocks/help-info.scss";
+@import "./blocks/doing.scss";
+@import "./blocks/form.scss";
+@import "./blocks/gallery.scss";
+@import "./blocks/footer.scss";
