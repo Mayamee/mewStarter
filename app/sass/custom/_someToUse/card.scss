@@ -1,0 +1,92 @@
+.card {
+  color: #fff;
+  background-color: $deep;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 30px;
+  padding-right: 30px;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 300px;
+    width: 100%;
+    @media (max-width: 750px) {
+      padding-top: 30px;
+    }
+  }
+
+  &__text-block {
+    user-select: none;
+    max-width: 375px;
+    max-height: 100px;
+    flex: 1 1 auto;
+    max-height: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  &__title {
+    user-select: none;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 0.04em;
+    margin-bottom: 20px;
+    @media (max-width: 750px) {
+      font-size: 22px;
+    }
+    @media (max-width: 700px) {
+      font-size: 24px;
+    }
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    @media (max-width: 750px) {
+      font-size: 16px;
+    }
+    @media (max-width: 700px) {
+      font-size: 18px;
+    }
+  }
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__link {
+    color: inherit;
+    display: block;
+    position: relative;
+    & span {
+      display: inline-block;
+      padding: 0px 5px;
+    }
+    @media (min-width: 992px) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__svg-block {
+    position: relative;
+    width: 65px;
+    height: 65px;
+    & img {
+      position: absolute;
+      width: 100%;
+      display: block;
+      height: 100%;
+      top: 0;
+      left: 0;
+      object-fit: contain;
+    }
+  }
+}

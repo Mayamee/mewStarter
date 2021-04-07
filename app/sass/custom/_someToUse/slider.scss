@@ -1,0 +1,105 @@
+/* Ограничивающая оболочка */
+.slick-list {
+  overflow: hidden;
+} /* Лента слайдов */
+.slick-track {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 600px;
+}
+.slider {
+  position: relative;
+  padding: 0px 100px;
+  @media (max-width: 1210px) {
+    padding: 0px 60px;
+  }
+  @media (max-width: 880px) {
+    padding: 0px 15px;
+  }
+  @media (max-width: 400px) {
+    padding: 0;
+  }
+  @media (max-width: 700px) {
+    padding: 0px 30px;
+  }
+  @media (max-width: 500px) {
+    padding: 0;
+  }
+  & .slick-slide {
+    @media (max-width: 1210px) {
+      padding: 0px 10px;
+    }
+    &.center-slide {
+      & .card {
+        transition: all 0.7s ease;
+        @media (min-width: 1210px) {
+          padding-top: 25px;
+          padding-bottom: 25px;
+          position: relative;
+          height: 600px;
+          z-index: 1;
+          background-color: $active;
+        }
+      }
+    }
+  }
+  & .slick-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-100%);
+    z-index: 10;
+    // <info>убрали надписи на кнопках
+    font-size: 0;
+    // </info>
+    width: 75px;
+    height: 75px;
+    &.slick-disabled {
+      opacity: 0.2;
+    }
+    &:focus {
+      transform: translateY(-100%) scale(0.9);
+    }
+  }
+  & .slick-arrow.slick-prev {
+    left: 10px;
+    background: url("../img/svg/slider-arrow_left.svg") 0 0 / 100% no-repeat;
+  }
+  & .slick-arrow.slick-next {
+    right: 10px;
+    background: url("../img/svg/slider-arrow_right.svg") 0 0 / 100% no-repeat;
+  }
+  & .slick-dots {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & li {
+      // .slick-dots li.slick-active {
+      & button {
+        height: 25px;
+        width: 25px;
+        border: 2px solid $logo-color;
+        border-radius: 50%;
+        font-size: 0;
+        margin: 0px 10px;
+      }
+    }
+    & li.slick-active {
+      & button {
+        background-color: $logo-color;
+      }
+    }
+  }
+}
+.slider {
+  &__item {
+    @media (max-width: 1210px) {
+      border-radius: 15px;
+    }
+    height: 500px;
+    @media (max-width: 750px) {
+      height: 400px;
+    }
+  }
+}

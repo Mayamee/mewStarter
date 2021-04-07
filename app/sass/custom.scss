@@ -1,0 +1,64 @@
+@import "./custom/preloader.scss";
+@import "./custom/burger.scss";
+@import "./custom/iconBlock.scss";
+@import "./custom/logoBlock.scss";
+@import "./custom/img.scss";
+@import "./custom/fullscreen.scss";
+@import "./custom/buttons/screw-button.scss";
+@import "./custom/_ibg.scss";
+@import "./custom/cards.scss";
+@import "./custom/slider.scss";
+@import "./custom/card.scss";
+@import "./helpers/hide.scss";
+.read-more {
+  &::before {
+    content: "/";
+    top: 50%;
+    right: -15px;
+  }
+}
+.logo {
+  position: relative;
+  height: 38px;
+  width: 132px;
+  & img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+._none {
+  display: none;
+}
+._lock {
+  overflow: hidden;
+}
+.title {
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 100%;
+  @media (max-width: $md2 + px) {
+    font-size: 40px;
+  }
+}
+.title-decor {
+  padding-bottom: 25px;
+  position: relative;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 37px;
+  text-align: center;
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 3px;
+    width: 200px;
+    background-color: #7675a5;
+  }
+}

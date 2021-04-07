@@ -1,0 +1,104 @@
+$pulse-width: 180;
+$pulse-height: 15;
+$pulse-gutter: 15;
+$pulse-ttf: "uppercase";
+$pulse-fz: 16px;
+$pulse-fw: 500;
+$pulse-shadow: 0 0 70px #31353d54;
+$pulse-hoverShadow: 0 0 60px rgba(0, 0, 0, 0.021);
+$pulse-color: #fff;
+$pulse-hoverColor: #fff;
+$pulse-bgColor: linear-gradient(
+  90deg,
+  rgb(107, 91, 197) 0%,
+  rgb(8, 177, 16) 100%
+);
+$pulse-roundBorder: none;
+$pulse-circleColor: 8px solid #5352924d; //border
+.pulse-button {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.button {
+  line-height: $pulse-height + px;
+  text-align: center;
+  min-width: $pulse-width + px;
+  min-height: $pulse-height + px;
+  font-family: inherit;
+  font-size: $pulse-fz;
+  text-transform: $pulse-ttf;
+  letter-spacing: 1.3px;
+  font-weight: $pulse-fw;
+  color: $pulse-color;
+  background: $pulse-bgColor;
+  border: none;
+  border-radius: 1000px;
+  box-shadow: $pulse-hoverShadow;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  padding: $pulse-gutter + px;
+}
+
+.button::before {
+  content: "";
+  border-radius: 1000px;
+  min-width: $pulse-width + px;
+  min-height: $pulse-height + px;
+  border: $pulse-roundBorder;
+  box-shadow: $pulse-shadow;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all 0.3s ease 0s;
+}
+
+.button:hover,
+.button:focus {
+  color: $pulse-hoverColor;
+  transform: scale(1.06);
+}
+
+.button:hover::before,
+.button:focus::before {
+  opacity: 1;
+}
+
+.button::after {
+  content: "";
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  border: $pulse-circleColor;
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: ring 2.5s infinite;
+}
+
+.button:hover::after,
+.button:focus::after {
+  animation: none;
+  display: none;
+}
+
+@keyframes ring {
+  0% {
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+  }
+  100% {
+    width: 250px;
+    height: 250px;
+    opacity: 0;
+  }
+}

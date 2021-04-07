@@ -1,0 +1,57 @@
+$screw-color: $accent;
+$screw-borderColor: $logo-color;
+$screw-borderHoverColor: $logo-color;
+$screw-backgroundColor: $dark;
+$screw-hoverColor: $logo-color;
+$screw-width: 200;
+$screw-height: 50;
+.screw-button {
+  position: relative;
+  border-radius: 10px;
+  display: block;
+  color: $screw-color;
+  font-size: inherit;
+  font-weight: 400;
+  font-family: inherit;
+  text-decoration: none;
+  height: $screw-height + px;
+  line-height: $screw-height + -4 + px;
+  width: $screw-width + px;
+  padding: 0px 5px;
+  text-align: center;
+  border: 4px solid $screw-borderColor;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 1s all ease;
+  &::before {
+    background: $screw-backgroundColor;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    transition: all 0.6s ease;
+    width: 100%;
+    height: 0%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+  &::after {
+    position: absolute;
+    content: "";
+    background-color: rgb(255, 255, 255);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -2;
+  }
+  @media (min-width: $md3 + px) {
+    &:hover {
+      color: $logo-color;
+      &::before {
+        height: 450%;
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+$size-icons: 45;
+$icon-padding: 10;
+.footer {
+  margin-top: 120px;
+  position: relative;
+  color: #fff;
+  &__body {
+    height: 130px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__logo {
+    flex: 0 0 auto;
+  }
+  &__icon-block {
+    flex: 0 1 20%;
+    @media (max-width: $md4 + px) {
+      flex-wrap: wrap;
+      flex: 0 0 30%;
+    }
+  }
+  &__link {
+    @media (max-width: $md4 + px) {
+      flex: 0 0 50%;
+      margin-bottom: 10px;
+    }
+    @media (max-width: $md4 + px) {
+      $icon-padding: $icon-padding * 0.4;
+      padding: 0px #{$icon-padding}px;
+      width: #{$size-icons + $icon-padding * 2}px;
+    }
+  }
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    background-color: $dark;
+  }
+}
