@@ -1,0 +1,34 @@
+@mixin lighter($color) {
+}
+@mixin triangle($width, $direction, $color) {
+  width: 0;
+  height: 0;
+  @if $direction == up {
+    border-left: $width solid transparent;
+    border-right: $width solid transparent;
+    border-bottom: $width solid $color;
+  }
+  @if $direction == down {
+    border-left: $width solid transparent;
+    border-right: $width solid transparent;
+    border-top: $width solid $color;
+  }
+  @if $direction == left {
+    border-top: $width solid transparent;
+    border-bottom: $width solid transparent;
+    border-right: $width solid $color;
+  }
+  @if $direction == right {
+    border-top: $width solid transparent;
+    border-bottom: $width solid transparent;
+    border-left: $width solid $color;
+  }
+}
+// $maxWidth: 1280;
+@mixin adaptiv-font($pcSize, $mobSize, $maxWidth) {
+  $addSize: $pcSize - $mobSize;
+  $maxWidth: $maxWidth - 320;
+  font-size: calc(
+    #{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth})
+  );
+}
